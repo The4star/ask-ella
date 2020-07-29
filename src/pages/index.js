@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -23,8 +24,12 @@ class IndexPage extends React.Component {
     
     return (
       <Layout>
-      <SEO title="Ask Ella" />
-      <Home images={images} />
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Main</title>
+        </Helmet>
+        <SEO title="Solutions" />
+        <Home images={images} />
       </Layout>
     )
   }

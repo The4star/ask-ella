@@ -1,0 +1,47 @@
+@import "../../../../colours.scss";
+
+.rect-button {
+  &.teal {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid $ella-teal;
+    background-color: #FFFFFF;
+    text-align: center;
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      color: $ella-teal;
+    }
+  }
+
+  &.red {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid $ella-red;
+    background-color: #FFFFFF;
+    text-align: center;
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      color: $ella-red;
+    }
+  }
+
+  &.purple {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid $ella-purple;
+    background-color: #FFFFFF;
+    text-align: center;
+    p {
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      color: $ella-purple;
+    }
+  }
+
+  &:hover {
+    box-shadow: 4px 4px 4px grey;
+    transition: .3s;
+  }
+}

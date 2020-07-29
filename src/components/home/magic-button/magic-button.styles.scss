@@ -1,1 +1,124 @@
 @import "../../../colours.scss";
+
+.magic-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 70%;
+  flex: 1;
+  margin-left: 40px;
+
+  .magic-background {
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 4px grey;
+  }
+
+  .magic-image {
+    display: none;
+    width: 45%;
+    height: auto;
+    z-index: 2;
+  }
+
+  .section-title {
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-size: 50px;
+    z-index: 2;
+    align-self: center !important;
+  }
+
+  .blurb {
+    display: none;
+    margin: 0px 10px;
+    z-index: 2;
+
+    &.teal {
+      p {
+        color: $ella-teal;
+      } 
+    }
+
+    &.red {
+      p {
+        color: $ella-red;
+      } 
+    }
+    &.purple {
+      p {
+        color: $ella-purple;
+      } 
+    }
+
+    p {
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 25px;
+    }
+  }
+
+  .button {
+    display: none;
+    width: 50%;
+    z-index: 2;
+  }
+
+  &:last-child {
+    margin-right: 40px;
+  }
+
+  &:hover {
+    .magic-background {
+      display: block;
+      animation: 0.5s ease-in grow;
+    }
+
+    .magic-image {
+      display: block;
+      animation: 0.8s ease-in appear;
+    }
+
+    .section-title {
+      font-family: "otamendi";
+      animation: 0.8s ease-in appear;
+    }
+
+    .blurb {
+      display: block;
+      animation: 0.8s ease-in appear;
+    }
+
+    .button {
+      display: block;
+      animation: 0.8s ease-in appear;
+    }
+  }
+}
+
+@keyframes grow {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 70%;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

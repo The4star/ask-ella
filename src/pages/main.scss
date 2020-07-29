@@ -1,14 +1,10 @@
 @import "../colours.scss";
 
-.font-test {
-  font-family: 'otamendi';
-  color: $ella-red;
-  font-size: 60px;
-  font-weight: 400;
-  margin: 20px;
+* {
+  margin: 0;
+  padding: 0
 }
 
-.kaiser {
-  width: 200px;
-  height: auto;
+body {
+  background-image: url("../images/ella-paper.jpg");
 }

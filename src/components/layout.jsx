@@ -13,21 +13,21 @@ import PropTypes from "prop-types"
 import "./layout.scss"
 
 // local images
-import { linkedIn } from '../images/image-variables'
+import { linkedIn, imdb } from '../images/image-variables'
 
 // icons 
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
 import EmailIcon from '@material-ui/icons/Email';
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
+//   const data = useStaticQuery(graphql`
+//     query SiteTitleQuery {
+//       site {
+//         siteMetadata {
+//           title
+//         }
+//       }
+//     }
+//   `)
 
   return (
     <>
@@ -38,6 +38,7 @@ const Layout = ({ children }) => {
           <p><EmailIcon className="email-icon"/> ella@ellalehaf.com</p>
           <p><PhoneIphoneIcon className="phone-icon" /> 0403138275</p>
           <a href="https://www.linkedin.com/in/ellalehaf/" target="_blank" rel="noopener noreferrer">{linkedIn}</a>
+          <a href="https://www.imdb.com/name/nm2858095/" target="_blank" rel="noopener noreferrer" id="imdb">{imdb}</a>
         </footer>
       </div>
     </>

@@ -1,11 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 // styles 
 import './main.scss'
+
+//  components 
+import Home from '../components/home/home.component'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -18,14 +20,11 @@ class IndexPage extends React.Component {
   render() {
     // images
     const images = this.props.data.datoCmsMainPage.images
-    const kaiser = images[0].fluid
+    
     return (
       <Layout>
       <SEO title="Ask Ella" />
-      <h1 className="font-test">
-        ask Ella
-      </h1>
-      <Img fluid={kaiser} className="kaiser" />
+      <Home images={images} />
       </Layout>
     )
   }

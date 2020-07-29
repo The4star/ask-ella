@@ -1,11 +1,9 @@
 @import './fonts.scss';
 
-* {
-  margin: 0;
-  padding: 0
-}
-
 footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   display: flex;
   align-items: flex-end;
   font-family: 'Montserrat', sans-serif;
@@ -30,5 +28,12 @@ footer {
 
   .phone-icon {
     margin-bottom: -2px;
+  }
+
+  #imdb {
+    svg {
+      width: 60px;
+      height: auto;
+    }
   }
 }

@@ -51,10 +51,13 @@
           justify-content: center;
           text-align: left;
 
-          p {
+          .slide-body {
             font-size: 20px !important;
-            padding-bottom: 15px ;
             font-family: "Montserrat", sans-serif !important;
+
+            p {
+              padding-bottom: 15px;
+            }
           }
 
           em {

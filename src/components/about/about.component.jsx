@@ -16,8 +16,8 @@ const renderSlides = (slide, i) => {
         <h3>
         {slide.slideHeader}
         </h3>
-        <p dangerouslySetInnerHTML={{ __html: slide.slideBody }}>
-        </p> 
+        <div className="slide-body" dangerouslySetInnerHTML={{ __html: slide.slideBody }}>
+        </div> 
     </SwiperSlide>
   )
 }

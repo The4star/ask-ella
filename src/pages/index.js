@@ -1,15 +1,18 @@
 import React from "react"
 import Img from "gatsby-image";
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 // styles 
-import './main.scss'
+import '../scss/main.scss';
 
 //  components 
-import Home from '../components/home/home.component'
-import About from "../components/about/about.component"
+import Home from '../components/home/home.component';
+import About from "../components/about/about.component";
+import Services from "../components/services/services.component";
+import Work from "../components/work/work.component";
+import Ask from "../components/ask/ask.component";
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
@@ -27,12 +30,16 @@ class IndexPage extends React.Component {
   }
 
   componentDidUpdate = () => {
-    console.log(this.state)
+    
   }
 
   handleScroll = (e) => {
-    const aboutSectionTop = document.querySelector('.about-section').offsetTop
-    if (window.scrollY >= aboutSectionTop) {
+    const aboutSectionTop = document.querySelector('.about-section').offsetTop;
+    const servicesSectionTop = document.querySelector('.services-section').offsetTop;
+    const workSectionTop = document.querySelector('.work-section').offsetTop;
+    const askSectionTop = document.querySelector('.ask-section').offsetTop;
+
+    if (window.scrollY >= aboutSectionTop - 300 && window.scrollY < servicesSectionTop - 400) {
       this.setState({ellaImage: "askEllaGreen"})
     } else {
       this.setState({ellaImage: "askEllaRed"})
@@ -56,10 +63,13 @@ class IndexPage extends React.Component {
 
   render() {
     // images
-    const images = this.props.data.datoCmsMainPage.images
+    const data = this.props.data.datoCmsMainPage
+    const images = data.images
     const askEllaRed = images[1].fluid
     const askEllaGreen = images[2].fluid
     const { ellaImage } = this.state
+    const aboutSlides = data.aboutPage
+
     return (
       <Layout>
         <SEO title="Solutions" />
@@ -72,7 +82,10 @@ class IndexPage extends React.Component {
           <Img fluid={askEllaRed} className="ella" />
         }
         <Home images={images} />
-        <About images={images}/>
+        <About images={images} slides={aboutSlides}/>
+        <Services images={images}/>
+        <Work />
+        <Ask />
       </Layout>
     )
   }
@@ -89,6 +102,10 @@ export const query = graphql`
       fluid(maxWidth: 500) {
         ...GatsbyDatoCmsFluid
       }
+    }
+    aboutPage {
+      slideHeader
+      slideBody
     }
   }
 }

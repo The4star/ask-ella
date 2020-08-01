@@ -1,0 +1,33 @@
+// import all other style files
+@import "./animation.scss";
+@import "./variables/colours.scss";
+@import "./variables/screen-sizes.scss";
+@import "./media_queries.scss";
+@import "./fonts.scss";
+@import "./layout.scss";
+@import "../components/about/about.styles.scss";
+@import "../components/buttons/rectangular-button/rectangular-button.styles.scss";
+@import "../components/home/home.styles.scss";
+@import "../components/home/magic-button/magic-button.styles.scss";
+@import "../components/services/services.styles.scss";
+@import "../components/work/work.styles.scss";
+@import "../components/ask/ask.styles.scss";
+
+* {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  background-image: url("../images/ella-paper.jpg");
+}
+
+.ella {
+  position: fixed !important;
+  top: 50%;
+  width: 20%;
+  height: auto;
+  margin-left: 20px;
+  margin-top: -110px;
+  animation: appear .3s ease-in;
+}

@@ -1,7 +1,5 @@
 import React from "react";
 
-// styles
-import './home.styles.scss';
 import MagicButton from "./magic-button/magic-button.component";
 
 class Home extends React.Component {

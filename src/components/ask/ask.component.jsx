@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-const Ask = ({}) => {
+const Ask = () => {
 
   return (
     <div className="ask-section">

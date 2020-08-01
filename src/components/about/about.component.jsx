@@ -1,7 +1,6 @@
 import React from 'react'; 
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import ReactMarkdown from 'react-markdown'
 
 // Import Swiper styles
 import 'swiper/swiper.scss';
@@ -9,11 +8,11 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 
 // install Swiper components
-SwiperCore.use([Navigation, Pagination, A11y]);
+SwiperCore.use([Navigation, Pagination]);
 
-const renderSlides = (slide) => {
+const renderSlides = (slide, i) => {
   return (
-    <SwiperSlide>
+    <SwiperSlide key={i}>
         <h3>
         {slide.slideHeader}
         </h3>
@@ -23,7 +22,7 @@ const renderSlides = (slide) => {
   )
 }
 
-const About = ({slides, images}) => {
+const About = ({slides}) => {
 
   return (
     <div className="about-section">
@@ -39,12 +38,10 @@ const About = ({slides, images}) => {
             slidesPerView={1}
             // navigation
             pagination={{ clickable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
           >
             {
-              slides.map(slide => {
-                return renderSlides(slide)
+              slides.map((slide, i) => {
+                return renderSlides(slide, i)
               })
             }
           </Swiper>

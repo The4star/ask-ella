@@ -36,8 +36,8 @@ class IndexPage extends React.Component {
   handleScroll = (e) => {
     const aboutSectionTop = document.querySelector('.about-section').offsetTop;
     const servicesSectionTop = document.querySelector('.services-section').offsetTop;
-    const workSectionTop = document.querySelector('.work-section').offsetTop;
-    const askSectionTop = document.querySelector('.ask-section').offsetTop;
+    // const workSectionTop = document.querySelector('.work-section').offsetTop;
+    // const askSectionTop = document.querySelector('.ask-section').offsetTop;
 
     if (window.scrollY >= aboutSectionTop - 300 && window.scrollY < servicesSectionTop - 400) {
       this.setState({ellaImage: "askEllaGreen"})

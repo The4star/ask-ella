@@ -9,9 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 
-// styles
-import "./layout.scss"
-
 // local images
 import { linkedIn, imdb } from '../images/image-variables'
 

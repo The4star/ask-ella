@@ -21,8 +21,8 @@ const About = ({slides}) => {
 
   return (
     <div className="about-section">
-      <div className="content-wrapper">
-      <div className="header">
+      <div className="about-content-wrapper">
+        <div className="header">
           <h2>
             Abou<span>t</span>
           </h2>

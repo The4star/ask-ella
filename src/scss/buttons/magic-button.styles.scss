@@ -6,7 +6,7 @@
   justify-content: space-around;
   height: 80%;
   flex: 1;
-  margin-left: 40px;
+  
 
   .magic-background {
     display: none;
@@ -32,6 +32,9 @@
     font-size: 50px;
     z-index: 2;
     align-self: center !important;
+    @include respond-until(tablet) {
+      font-size: 30px;
+    }
   }
 
   .blurb {
@@ -68,35 +71,38 @@
     width: 50%;
     z-index: 2;
   }
-
-  &:last-child {
-    margin-right: 20px;
-  }
-
-  &:hover {
-    .magic-background {
-      display: block;
-      animation: 0.5s ease-in grow;
+  
+  @include respond-to(desktop) {
+    margin-left: 40px;
+    &:hover {
+      .magic-background {
+        display: block;
+        animation: 0.5s ease-in grow;
+      }
+  
+      .magic-image {
+        display: block;
+        animation: 0.8s ease-in appear;
+      }
+  
+      .section-title {
+        font-family: "otamendi";
+        animation: 0.8s ease-in appear;
+      }
+  
+      .blurb {
+        display: block;
+        animation: 0.8s ease-in appear;
+      }
+  
+      .button {
+        display: block;
+        animation: 0.8s ease-in appear;
+      }
     }
 
-    .magic-image {
-      display: block;
-      animation: 0.8s ease-in appear;
+    &:last-child {
+      margin-right: 20px;
     }
-
-    .section-title {
-      font-family: "otamendi";
-      animation: 0.8s ease-in appear;
-    }
-
-    .blurb {
-      display: block;
-      animation: 0.8s ease-in appear;
-    }
-
-    .button {
-      display: block;
-      animation: 0.8s ease-in appear;
-    }
-  }
+  }  
 }

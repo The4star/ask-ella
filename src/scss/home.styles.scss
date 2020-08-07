@@ -5,4 +5,16 @@
   align-items: center;
   justify-content: space-around;
   margin-left: 20%;
+
+  @include respond-until(tablet) {
+    flex-direction: column;
+    margin-left: 0;
+    width: 100vw;
+
+    .ella-mobile {
+      display: block;
+      width: 70%;
+      margin-top: 20px;
+    }
+  }
 }

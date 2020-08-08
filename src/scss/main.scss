@@ -24,9 +24,14 @@
 
 body {
   background-image: url("../images/ella-paper.jpg");
+  overflow-x: hidden !important;
+  main {
+    overflow-x: hidden !important;
+  }
 }
 
 .ella {
+  @include respond-to(desktop) {
   position: fixed !important;
   top: 50%;
   width: 20%;
@@ -34,4 +39,10 @@ body {
   margin-left: 20px;
   margin-top: -110px;
   animation: appear .3s ease-in;
+  }
+
+  @include respond-until(tablet) {
+   display: none;
+  }
+
 }

@@ -1,8 +1,17 @@
 .about-section {
   position: relative;
   height: 100vh;
-  width: calc(100vw - 21%);
-  margin-left: 20%;
+
+  
+  @include respond-to(desktop) {
+    width: calc(100vw - 21%);
+    margin-left: 20%;
+  }
+
+  @include respond-until(tablet) {
+    margin-left: 20px;
+    width: 95vw;
+  }
 
   .about-content-wrapper {
     position: absolute;
@@ -29,6 +38,9 @@
         span {
           margin-left: 15px
         }
+        @include respond-until(tablet) {
+          font-size: 50px;
+        }
       }
     }
 
@@ -54,9 +66,15 @@
           .slide-body {
             font-size: 20px !important;
             font-family: "Montserrat", sans-serif !important;
-
+            
             p {
               padding-bottom: 15px;
+            }
+            @include respond-until(tablet) {
+              font-size: 15px !important;
+              overflow-y: auto;
+              overflow-x: auto;
+              padding-top: 20px;
             }
           }
 
@@ -68,11 +86,17 @@
           }
           ul {
             list-style-type: disc !important;
+            @include respond-until(tablet) {
+              font-size: 15px !important;
+            }
           }
           li {
             margin-bottom: 20px !important;
             font-size: 17px !important;
             list-style: disc !important;
+            @include respond-until(tablet) {
+              font-size: 15px !important;
+            }
           }
           h3 {
             color: $ella-teal;
@@ -80,6 +104,11 @@
             font-weight: bold;
             font-size: 30px;
             font-family: "Montserrat", sans-serif;
+
+            @include respond-until(tablet) {
+              font-size: 20px;
+              text-align: center;
+            }
           }
         }
 

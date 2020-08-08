@@ -1,26 +1,26 @@
 @mixin respond-to($media) {
   @if $media == tablet {
-    @media only screen and (min-width: em($size-tablet)) { @content; }
+    @media only screen and (min-width: $size-tablet) { @content; }
   }
   @if $media == desktop {
-    @media only screen and (min-width: em($size-desktop)) { @content; }
+    @media only screen and (min-width: $size-desktop) { @content; }
   }
   @if $media == wide {
-    @media only screen and (min-width: em($size-wide)) { @content; }
+    @media only screen and (min-width: $size-wide) { @content; }
   }
 }
 
 @mixin respond-until($media) {
   @if $media == tablet {
-    @media only screen and (max-width: em($size-tablet)) { @content; }
+    @media only screen and (max-width: $size-tablet) { @content; }
   }
   @if $media == desktop {
-    @media only screen and (max-width: em($size-desktop)) { @content; }
+    @media only screen and (max-width: $size-desktop) { @content; }
   }
   @if $media == wide {
-    @media only screen and (max-width: em($size-wide)) { @content; }
+    @media only screen and (max-width: $size-wide) { @content; }
   }
   @if $media == mobile {
-    @media only screen and (max-width: em($size-tablet)) { @content; }
+    @media only screen and (max-width: $size-tablet) { @content; }
   }
 }

@@ -31,6 +31,11 @@
     padding: 20px;
     z-index: 107;
 
+    @include respond-until(tablet) {
+      width: 75%;
+      height: 95vh;
+    }
+
     .close-button {
       position: absolute;
       cursor: pointer;
@@ -75,6 +80,11 @@
         span {
           margin-left: 15px
         }
+        @include respond-until(tablet) {
+          font-size: 50px;
+          text-align: center;
+          margin-bottom: 10px;
+        }
       }
       
       &.red {
@@ -85,6 +95,11 @@
         h2 {
           text-align: center;
           font-size: 60px !important;
+
+          @include respond-until(tablet) {
+            font-size: 35px !important;
+            text-align: center !important;
+          }
         }
         
       } 
@@ -99,6 +114,9 @@
       font-size: 20px;
       font-family: "Montserrat", sans-serif !important;
       margin-bottom: 15px;
+      @include respond-until(tablet) {
+        font-size: 15px;
+      }
     }
 
     &.red {

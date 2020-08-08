@@ -24,6 +24,10 @@
 
 body {
   background-image: url("../images/ella-paper.jpg");
+  overflow-x: hidden !important;
+  main {
+    overflow-x: hidden !important;
+  }
 }
 
 .ella {

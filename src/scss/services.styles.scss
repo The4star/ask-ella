@@ -1,8 +1,16 @@
 .services-section {
   position: relative;
   height: 100vh;
-  width: calc(100vw - 21%);
-  margin-left: 20%;
+
+  @include respond-to(desktop) {
+    width: calc(100vw - 21%);
+    margin-left: 20%;
+  }
+
+  @include respond-until(tablet) {
+    margin-left: 20px;
+    width: 95vw;
+  }
 
   .services-content-wrapper {
     position: absolute;
@@ -28,6 +36,9 @@
         span {
           margin-left: 15px
         }
+        @include respond-until(tablet) {
+          font-size: 50px;
+        }
       }
     }
 
@@ -37,6 +48,9 @@
       p {
         margin: 15px 40px 15px 40px;
         font-size: 20px;
+        @include respond-until(tablet) {
+          font-size: 15px;
+        }
       }
     }
 
@@ -47,6 +61,10 @@
       justify-content: space-around;
       height: 50%;
 
+      @include respond-until(tablet) {
+        height: 40%;
+      }
+
       .service-title {
         cursor: pointer;
         font-family: "Montserrat", sans-serif !important;
@@ -56,6 +74,10 @@
         transition: .3s;
         border: none;
         background-color: unset;
+
+        @include respond-until(tablet) {
+          font-size: 20px;
+        }
 
         &:focus {
           outline: none;

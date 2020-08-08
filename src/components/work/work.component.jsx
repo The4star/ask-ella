@@ -41,21 +41,23 @@ console.log(content)
             }
           </div>
           <div className="fun-list">
-            {
-              content.map(section => {
-                if (section.funFactContent) {
-                  return (
-                    <div key={`${section.title}`}>
-                      <button  className="fun-title" onClick={() => togglePopup(`${section.title.replace(/ /g, "-")}-popup`)}>
-                        {section.title}
-                      </button>
-                      <InformationPopup id={`${section.title.replace(/ /g, "-")}-popup`} colour="blue" title={section.title} content={section.funFactContent} togglePopup={togglePopup} funHeader/> 
-                    </div>
-                  )
-                }
-                return null
-              })
-            }
+            <div className="fun-padding">
+              {
+                content.map(section => {
+                  if (section.funFactContent) {
+                    return (
+                      <div key={`${section.title}`}>
+                        <button  className="fun-title" onClick={() => togglePopup(`${section.title.replace(/ /g, "-")}-popup`)}>
+                          {section.title}
+                        </button>
+                        <InformationPopup id={`${section.title.replace(/ /g, "-")}-popup`} colour="blue" title={section.title} content={section.funFactContent} togglePopup={togglePopup} funHeader/> 
+                      </div>
+                    )
+                  }
+                  return null
+                })
+              }
+            </div>
           </div>
         </div>
         

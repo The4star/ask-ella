@@ -1,5 +1,7 @@
 import React, { Component } from 'react'; 
 
+import { linkTo } from '../../functions/general';
+
 class Ask extends Component {
   constructor(props) {
     super(props)
@@ -122,6 +124,11 @@ class Ask extends Component {
                 </button>
             </div>
           </form> 
+          <div className="return-to-top">
+            <button onClick={() => linkTo("HOME")}>
+              ↑
+            </button>
+          </div>
         </div>
       </div>
     )

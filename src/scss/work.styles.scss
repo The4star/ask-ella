@@ -53,50 +53,76 @@
       @include respond-until(tablet) {
         flex-direction: column;
       }
-
-      .work-list, .fun-list {
-        position: relative;
+      .work-list-wrapper, .fun-list-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 80%;
         width: 40%;
-        padding: 40px;
-        border:4px solid $ella-blue;
-        border-radius: 10px;
-        overflow-y: auto;
 
         @include respond-until(tablet) {
-          width: 70%;
+          width: 95%;
           margin-top: 10px;
           padding: 5px;
-          height: 40%;
-          scroll-padding: 50px 0 0 50px;
+          height: 50%;
         }
 
-        .work-title, .fun-title {
-          cursor: pointer;
+        h3 {
           font-family: "Montserrat", sans-serif !important;
-          font-size: 20px;
-          font-weight: bold;
-          color: $ella-blue;
-          transition: .3s;
-          border: none;
-          background-color: unset;
-          margin-top: 20px; 
-          
+          margin-bottom: 10px;
+          font-weight: normal !important;
+          font-size: 30px;
+
           @include respond-until(tablet) {
             font-size: 15px;
-                       
+            margin-bottom: 5px;
+          }
+        }
+        
+
+        .work-list, .fun-list {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 80%;
+          width: 100%;
+          padding: 40px;
+          border:4px solid $ella-blue;
+          border-radius: 10px;
+          overflow-y: auto;
+
+          @include respond-until(tablet) {
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px;
+            height: 100%;
           }
 
-          &:focus {
-            outline: none;
-          }
-
-          &:hover {
-            transform: scale(1.1);
+          .work-title, .fun-title {
+            cursor: pointer;
+            font-family: "Montserrat", sans-serif !important;
+            font-size: 20px;
+            font-weight: bold;
+            color: $ella-blue;
             transition: .3s;
+            border: none;
+            background-color: unset;
+            margin-top: 20px; 
+            
+            @include respond-until(tablet) {
+              font-size: 15px;
+                        
+            }
+
+            &:focus {
+              outline: none;
+            }
+
+            &:hover {
+              transform: scale(1.1);
+              transition: .3s;
+            }
           }
         }
       }

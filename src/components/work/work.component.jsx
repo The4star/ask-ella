@@ -23,40 +23,48 @@ const Work = ({content}) => {
           </h2>
         </div>
         <div className="list-area">
-          <div className="work-list">
-            {
-              content.map(section => {
-                if (section.workContent) {
-                  return (
-                    <div key={`${section.title}`}>
-                      <button  className="work-title" onClick={() => togglePopup(`${section.title.replace(/ /g, "-")}-popup`)}>
-                        {section.title}
-                      </button>
-                      <InformationPopup id={`${section.title.replace(/ /g, "-")}-popup`} colour="blue" title={section.title} content={section.workContent} togglePopup={togglePopup} /> 
-                    </div>
-                  )
-                }
-                return null
-              })
-            }
-          </div>
-          <div className="fun-list">
-            <div className="fun-padding">
+          <div className="work-list-wrapper">
+            <h3>Work</h3>
+            <div className="work-list">
               {
                 content.map(section => {
-                  if (section.funFactContent) {
+                  if (section.workContent) {
                     return (
                       <div key={`${section.title}`}>
-                        <button  className="fun-title" onClick={() => togglePopup(`${section.title.replace(/ /g, "-")}-popup`)}>
+                        <button  className="work-title" onClick={() => togglePopup(`${section.title.replace(/ /g, "-")}-popup`)}>
                           {section.title}
                         </button>
-                        <InformationPopup id={`${section.title.replace(/ /g, "-")}-popup`} colour="blue" title={section.title} content={section.funFactContent} togglePopup={togglePopup} funHeader/> 
+                        <InformationPopup id={`${section.title.replace(/ /g, "-")}-popup`} colour="blue" title={section.title} content={section.workContent} togglePopup={togglePopup} /> 
                       </div>
                     )
                   }
                   return null
                 })
               }
+            </div>
+          </div>
+          <div className="fun-list-wrapper">
+            <h3>
+              Fun Facts
+            </h3>
+            <div className="fun-list">
+              <div className="fun-padding">
+                {
+                  content.map(section => {
+                    if (section.funFactContent) {
+                      return (
+                        <div key={`${section.title}`}>
+                          <button  className="fun-title" onClick={() => togglePopup(`${section.title.replace(/ /g, "-")}-popup`)}>
+                            {section.title}
+                          </button>
+                          <InformationPopup id={`${section.title.replace(/ /g, "-")}-popup`} colour="blue" title={section.title} content={section.funFactContent} togglePopup={togglePopup} funHeader/> 
+                        </div>
+                      )
+                    }
+                    return null
+                  })
+                }
+              </div>
             </div>
           </div>
         </div>

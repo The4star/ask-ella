@@ -1,0 +1,38 @@
+.floating-nav-wrapper {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  top: 50px;
+  z-index: 1000;
+  animation: appear .3s ease-in-out;
+
+  .nav-button {
+
+    button {
+      cursor: pointer;
+      border: none;
+      background-color: unset;
+      font-family: "Montserrat", sans-serif !important;
+      font-size: 50px;
+
+      &:focus {
+        outline: none;
+      }
+
+      @include respond-until(tablet) {
+        font-size: 25px;
+      }
+    }
+  }
+
+  @include respond-to(desktop) {
+    margin-left: calc(20% + 40px);
+    margin-right: 40px;
+    width: 74.5%;
+  }
+
+  @include respond-until(desktop) {
+    width: 100vw;
+  }
+}

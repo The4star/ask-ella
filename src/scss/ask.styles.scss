@@ -150,6 +150,21 @@
       z-index: 1;
       animation: 1s form-appear ease-in-out;
     }
+  }
 
+  .return-to-top {
+    margin-top: 40px;
+
+    button {
+      cursor: pointer;
+      border: none;
+      background-color: unset;
+      font-weight: bold;
+      font-size: 50px;
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 }

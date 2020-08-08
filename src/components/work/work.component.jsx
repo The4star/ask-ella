@@ -13,7 +13,7 @@ const togglePopup = (id) => {
 }
 
 const Work = ({content}) => {
-console.log(content)
+
   return (
     <div className="work-section">
       <div className="work-content-wrapper">

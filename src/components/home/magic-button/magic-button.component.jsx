@@ -3,6 +3,8 @@ import Img from "gatsby-image";
 
 import RectangularButton from '../../buttons/rectangular-button/rectangular-button.component';
 
+import {linkTo} from '../../../functions/general';
+
 const MagicButton = ({title, image, p1, p2, colour, buttonText}) => {
 
   return (
@@ -14,7 +16,7 @@ const MagicButton = ({title, image, p1, p2, colour, buttonText}) => {
         <Img fluid={image} />
       </div>
       <div className="section-title">
-          <p>
+          <p onClick={() => linkTo(title)}>
             {title}
           </p>
       </div>
@@ -27,7 +29,7 @@ const MagicButton = ({title, image, p1, p2, colour, buttonText}) => {
         </p>
       </div>
       <div className="button">
-        <RectangularButton colour={colour} text={buttonText} />
+        <RectangularButton colour={colour} text={buttonText} place={title} />
       </div>
     </div>
   )

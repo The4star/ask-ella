@@ -6,15 +6,33 @@
   justify-content: space-around;
   margin-left: 20%;
 
-  @include respond-until(tablet) {
+  @include respond-until(desktop) {
     flex-direction: column;
     margin-left: 0;
     width: 100vw;
-
+    margin-bottom: 20%;
     .ella-mobile {
       display: block;
       width: 70%;
       margin-top: 20px;
     }
+  }
+
+  .ask-button-mobile {
+    @include respond-until(desktop) {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative !important;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 30px;
+    animation: appear .3s ease-in;
+    }
+  
+    @include respond-to(desktop) {
+     display: none;
+    }
+  
   }
 }

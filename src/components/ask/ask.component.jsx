@@ -87,7 +87,10 @@ class Ask extends Component {
       hideTopicOptions
     } = this.state
 
-    const selectOptions = ["Event Management", "Cast Management", "Band Management", "Airbnb Management", "Fur mum advice", "Coaching"]
+    const { formOptions } = this.props
+    
+    const selectOptions = formOptions.map(option => option.name)
+    
     return (
       <div className="ask-section">
         <div className="ask-content-wrapper">
@@ -99,18 +102,18 @@ class Ask extends Component {
           <form name="Contact Form" method="POST" data-netlify="true" action="/thankyou">
             <input type="hidden" name="form-name" value="Contact Form" />
             <div className="inputs">
-              <label className="ask-label" for="name">Hey, my name is</label> 
-              <input className="ask-input" value={ name } onChange={ this.handleChange } maxlength="30" autocomplete="off" type="text" name="name" placeholder="full name"></input>
-              <label className="ask-label" for="topic">and I'd like to start a conversation about</label>
-              <input className="ask-input topic" value = { topic } onClick={() => this.setState({ hideTopicOptions: false})} type="text" placeholder="a Sitecore Upgrade" name="topic"></input>
+              <label className="ask-label" htmlFor="name">Hey, my name is</label> 
+              <input className="ask-input" value={ name } onChange={ this.handleChange } maxLength="30" autoComplete="off" type="text" name="name" placeholder="John Smith"></input>
+              <label className="ask-label" htmlFor="topic">and I'd like to start a conversation about</label>
+              <input className="ask-input topic" value = { topic } onChange={this.handleChange} onClick={() => this.setState({ hideTopicOptions: false})} type="text" placeholder="Event Management" name="topic"></input>
               {
                 hideTopicOptions === false &&
                 this.renderOptions(selectOptions)
               }
-              <label className="ask-label" for="email">. My Email Address is</label>
-              <input className="ask-input" value={ email } onChange={ this.handleChange } maxlength="50" autocomplete="off" type="email" name="email" placeholder="email address"></input>
-              <label className="ask-label" for="phone">and my phone number is</label>            
-              <input className="ask-input" value={ phone } onChange={ this.handleChange } maxlength="10" autocomplete="off" type="text" name="phone" placeholder="phone number"></input>
+              <label className="ask-label" htmlFor="email">. My email address is</label>
+              <input className="ask-input" value={ email } onChange={ this.handleChange } maxLength="50" autoComplete="off" type="email" name="email" placeholder="john@smith.com"></input>
+              <label className="ask-label" htmlFor="phone">and my phone number is</label>            
+              <input className="ask-input" value={ phone } onChange={ this.handleChange } maxLength="10" autoComplete="off" type="text" name="phone" placeholder="0412345678"></input>
               <span className="ask-fullstop">.</span>
             </div>
             <div className="cta">

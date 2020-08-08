@@ -65,6 +65,7 @@ class IndexPage extends React.Component {
     const aboutSlides = data.aboutPage
     const servicesContent = data.services
     const workContent = data.work
+    const formOptions = data.formoptions;
 
     return (
       <Layout>
@@ -90,7 +91,7 @@ class IndexPage extends React.Component {
         <About images={images} slides={aboutSlides}/>
         <Services images={images} content={servicesContent}/>
         <Work content={workContent} />
-        <Ask />
+        <Ask formOptions={formOptions}/>
       </Layout>
     )
   }
@@ -134,6 +135,9 @@ export const query = graphql`
         title
         funFactContent
       }
+    }
+    formoptions {
+      name
     }
   }
 }

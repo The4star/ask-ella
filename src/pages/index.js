@@ -14,7 +14,9 @@ import Services from "../components/services/services.component";
 import Work from "../components/work/work.component";
 import Ask from "../components/ask/ask.component";
 
-import { linkTo } from '../functions/general'
+import { linkTo, debounce } from '../functions/general'
+
+import FloatingNav from "../components/floating-nav/floating-nav.component";
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
@@ -24,11 +26,11 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('scroll', this.debounce(this.handleScroll))
+    window.addEventListener('scroll', debounce(this.handleScroll))
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.debounce(this.handleScroll))
+    window.removeEventListener("scroll", debounce(this.handleScroll))
   }
 
   componentDidUpdate = () => {
@@ -50,23 +52,6 @@ class IndexPage extends React.Component {
     }
   }
 
-  debounce(func, wait = 10, immediate = true) {
-    let timeout;
-    return function() {
-      let context = this, args = arguments;
-      let later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      let callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
-
-  
-
   render() {
     // images
     const data = this.props.data.datoCmsMainPage
@@ -84,6 +69,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Solutions" />
+        <FloatingNav />
         {
           ellaImage === "askEllaRed" ? 
           <Img fluid={askEllaRed} className="ella" />

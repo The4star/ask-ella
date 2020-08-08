@@ -63,6 +63,8 @@ class IndexPage extends React.Component {
     };
   };
 
+  
+
   render() {
     // images
     const data = this.props.data.datoCmsMainPage

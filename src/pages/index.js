@@ -13,6 +13,8 @@ import About from "../components/about/about.component";
 import Services from "../components/services/services.component";
 import Work from "../components/work/work.component";
 import Ask from "../components/ask/ask.component";
+
+import { linkTo } from '../functions/general'
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
@@ -92,6 +94,12 @@ class IndexPage extends React.Component {
           :
           <Img fluid={askEllaRed} className="ella" />
         }
+        <div onClick={() => linkTo("ASK")} className="ask-button">
+          <p>
+            ASK ME
+          </p>
+          <p>↓</p>
+        </div>
         <Home images={images} />
         <About images={images} slides={aboutSlides}/>
         <Services images={images} content={servicesContent}/>

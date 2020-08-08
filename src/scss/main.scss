@@ -41,7 +41,27 @@ body {
   animation: appear .3s ease-in;
   }
 
-  @include respond-until(tablet) {
+  @include respond-until(desktop) {
+   display: none;
+  }
+
+}
+
+.ask-button {
+  @include respond-to(desktop) {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed !important;
+  top: calc(50% + 200px);
+  margin-left: 50px;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 50px;
+  animation: appear .3s ease-in;
+  }
+
+  @include respond-until(desktop) {
    display: none;
   }
 

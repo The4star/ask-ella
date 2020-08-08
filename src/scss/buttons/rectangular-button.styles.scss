@@ -18,6 +18,14 @@
     border: 2px solid $ella-red;
     background-color: #FFFFFF;
     text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: $ella-red;
+
+    &.submit {
+      font-size: 25px !important;
+    }
+
     p {
       font-family: "Montserrat", sans-serif;
       font-weight: bold;

@@ -29,6 +29,17 @@ class FloatingNav extends Component {
     // spot for nav to appear
     const appearancePosition = window.screen.width >= 1025 ? document.querySelectorAll('.section-title')[0].offsetTop : homeSectionBottom - 200;
     
+    
+    if (window.scrollY - 50 >= appearancePosition) {
+      if (this.state.showNav === false) {
+        this.setState({showNav: true})
+      }
+    } else {
+      if (this.state.showNav === true) {
+        this.setState({showNav: false})
+      }
+    }
+
     if (window.scrollY >= aboutSectionTop - 100 && window.scrollY < servicesSectionTop - 400) {
       document.querySelector('#about-nav').style.opacity = 0
       document.querySelector('#services-nav').style.opacity = 1
@@ -45,19 +56,6 @@ class FloatingNav extends Component {
       document.querySelector('#about-nav').style.opacity = 1
       document.querySelector('#services-nav').style.opacity = 1
       document.querySelector('#work-nav').style.opacity = 1
-    }
-    
-    
-    if (window.scrollY - 50 >= appearancePosition) {
-      if (this.state.showNav === false) {
-        this.setState({showNav: true})
-      }
-      
-    } else {
-      if (this.state.showNav === true) {
-        this.setState({showNav: false})
-      }
-      
     }
   }
 

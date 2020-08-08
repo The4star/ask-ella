@@ -8,6 +8,16 @@
   }
 }
 
+@keyframes form-appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .5;
+  }
+}
+
 @keyframes grow {
   0% {
     height: 0;

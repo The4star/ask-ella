@@ -34,5 +34,6 @@
 
   @include respond-until(desktop) {
     width: 100vw;
+    top: 20px;
   }
 }

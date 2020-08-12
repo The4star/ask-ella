@@ -61,4 +61,67 @@ footer {
       }
     }
   }
+
+  .credits-button {
+    border: none;
+    background-color: unset;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .credits {
+    position: absolute;
+    right: 50%;
+    top: -140px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 4px 4px 4px grey;
+
+    @include respond-until(desktop) {
+      right: unset;
+      top: -120px;
+    }
+
+    button {
+      background-color: unset;
+      border: none;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        transform: scale(1.08);
+        transition: .3s;
+      }
+
+      &:focus {
+        outline: none;
+      }
+      
+      svg {
+        width: 20px !important;
+        height: auto;
+        path {
+          fill: $ella-red;
+        }
+      }
+    }
+
+    a {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+    h4 {
+      margin-top: 10px;
+    }
+  }
 }

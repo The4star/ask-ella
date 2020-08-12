@@ -107,7 +107,7 @@ class Ask extends Component {
               <label className="ask-label" htmlFor="name">Hey, my name is</label> 
               <input className="ask-input" value={ name } onChange={ this.handleChange } maxLength="30" autoComplete="off" type="text" name="name" placeholder="John Smith" required></input>
               <label className="ask-label" htmlFor="topic">and I'd like to start a conversation about</label>
-              <input className="ask-input topic" value = { topic } onChange={this.handleChange} onClick={() => this.setState({ hideTopicOptions: false})} type="text" placeholder="Event Management" name="topic" readonly></input>
+              <input className="ask-input topic" value = { topic } onChange={this.handleChange} onClick={() => this.setState({ hideTopicOptions: false})} type="text" placeholder="Event Management" name="topic" readOnly></input>
               {
                 hideTopicOptions === false &&
                 this.renderOptions(selectOptions)

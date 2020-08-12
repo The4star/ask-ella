@@ -105,17 +105,17 @@ class Ask extends Component {
             <input type="hidden" name="form-name" value="Contact Form" />
             <div className="inputs">
               <label className="ask-label" htmlFor="name">Hey, my name is</label> 
-              <input className="ask-input" value={ name } onChange={ this.handleChange } maxLength="30" autoComplete="off" type="text" name="name" placeholder="John Smith"></input>
+              <input className="ask-input" value={ name } onChange={ this.handleChange } maxLength="30" autoComplete="off" type="text" name="name" placeholder="John Smith" required></input>
               <label className="ask-label" htmlFor="topic">and I'd like to start a conversation about</label>
-              <input className="ask-input topic" value = { topic } onChange={this.handleChange} onClick={() => this.setState({ hideTopicOptions: false})} type="text" placeholder="Event Management" name="topic"></input>
+              <input className="ask-input topic" value = { topic } onChange={this.handleChange} onClick={() => this.setState({ hideTopicOptions: false})} type="text" placeholder="Event Management" name="topic" readonly></input>
               {
                 hideTopicOptions === false &&
                 this.renderOptions(selectOptions)
               }
               <label className="ask-label" htmlFor="email">. My email address is</label>
-              <input className="ask-input" value={ email } onChange={ this.handleChange } maxLength="50" autoComplete="off" type="email" name="email" placeholder="john@smith.com"></input>
+              <input className="ask-input" value={ email } onChange={ this.handleChange } maxLength="50" autoComplete="off" type="email" name="email" placeholder="john@smith.com" required></input>
               <label className="ask-label" htmlFor="phone">and my phone number is</label>            
-              <input className="ask-input" value={ phone } onChange={ this.handleChange } maxLength="10" autoComplete="off" type="text" name="phone" placeholder="0412345678"></input>
+              <input className="ask-input" value={ phone } onChange={ this.handleChange } maxLength="10" autoComplete="off" type="text" name="phone" placeholder="0412345678" required></input>
               <span className="ask-fullstop">.</span>
             </div>
             <div className="cta">
